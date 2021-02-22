@@ -1,5 +1,3 @@
-# nlw-04-reactjs
-
 # :rocket: <nlw/> #04
 O NLW é um evento online organizado pela @rocketseat, com muito código, desafios, networking e um único objetivo: levar programadores para o próximo nível.
  
