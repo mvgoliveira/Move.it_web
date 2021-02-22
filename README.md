@@ -1,5 +1,3 @@
-![1_HqZRp_T9UEEoGEuI6IKZig](https://user-images.githubusercontent.com/53785487/108722244-ae065600-7501-11eb-8c1a-23420cb2be6c.jpg)
-
 # :rocket: < nlw /> #04
 O NLW é um evento online organizado pela @rocketseat, com muito código, desafios, networking e um único objetivo: levar programadores para o próximo nível.
  
