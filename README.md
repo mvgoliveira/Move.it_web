@@ -1,4 +1,4 @@
-# :rocket: < nlw /> #04
+# :rocket: Next Level Week 04 - Trilha reactJs
 O NLW é um evento online organizado pela @rocketseat, com muito código, desafios, networking e um único objetivo: levar programadores para o próximo nível.
  
 
