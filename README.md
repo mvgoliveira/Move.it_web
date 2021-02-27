@@ -4,7 +4,7 @@ O NLW é um evento online organizado pela @rocketseat, com muito código, desafi
 
 ### 	:man_technologist: Sobre a aplicação
 
-A trilha react da quarta edição do nlw tem o objetivo de criar um one page website responsivo chamado moveit. O site usa os fundamentos da técnica pomodoro 
+A trilha react da quarta edição do nlw tem o objetivo de criar um one page website chamado moveit. O site usa os fundamentos da técnica pomodoro 
 para promover séries de alongamentos e exercícios para evitar problemas futuros de saúde, devido ao uso excessivo dos computadores.
 
 ### 📁 Instalação
