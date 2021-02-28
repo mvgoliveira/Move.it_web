@@ -4,12 +4,29 @@ import { LoginProvider } from '../contexts/LoginContext';
 
 import { LoginBox } from '../components/LoginBox';
 import { GetServerSideProps } from 'next';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 interface LoginProps {
    githubUsername: string
+}
+
+ function Redirect({ to }) {
+   const router = useRouter();
+ 
+   useEffect(() => {
+     router.push(to);  
+   }, [to]);
+ 
+   return null;
  }
 
 export default function Login(props: LoginProps) {
+
+   if (props.githubUsername !== "undefined") {
+      return <Redirect to="/" />
+   }
+
    return (
       <LoginProvider githubUsername={props.githubUsername}>
 

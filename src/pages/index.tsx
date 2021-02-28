@@ -15,6 +15,8 @@ import { ChallengesProvider } from '../contexts/ChallengesContext';
 import { LoginProvider } from '../contexts/LoginContext';
 
 import styles from '../styles/pages/Home.module.css';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 interface HomeProps {
   level: number ;
@@ -23,7 +25,21 @@ interface HomeProps {
   githubUsername: string ;
 }
 
+function Redirect({ to }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push(to);  
+  }, [to]);
+
+  return null;
+}
+
 export default function Home(props : HomeProps) {
+
+  if (props.githubUsername === "undefined") {
+    return <Redirect to="/login" />
+  }
 
   return (
     <ChallengesProvider 
