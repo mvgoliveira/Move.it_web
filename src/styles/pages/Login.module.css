@@ -1,0 +1,93 @@
+.container {
+   display: flex;
+   justify-content: space-between;
+   background: var(--blue);
+   height: 100vh;
+   color: #fff;
+}
+
+.leftContainer {
+   flex: 1;
+   display: flex;
+   align-items: center;
+
+   background: url('/login-img.svg') no-repeat left;
+   background-size: 90%;
+}
+
+.rightContainer {
+   width: 45%;
+
+   display: flex;
+   flex-direction: column;
+   
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.rightContainer > img {
+   max-width: 22.5rem;
+   padding-bottom: 96px;
+}
+
+.rightContainer strong {
+   font-weight: 600;
+   font-size: 2.25rem;
+   padding-bottom: 24px;
+}
+
+.rightContainer > div {
+   display: flex;
+   align-items: center;
+   padding-bottom: 40px;
+}
+
+.rightContainer > div img {
+   padding-right: 24px;
+   max-height: 2.396rem;
+}
+
+.rightContainer > div p {
+   padding-left: 24px;
+   max-width: 254px;
+   color: var(--text-highlight);
+   font-size: 1rem;
+}
+
+.rightContainer form {
+   display: flex;
+   background: none;
+}
+
+.rightContainer form input {
+   width: 340px;
+   height: 100%;
+
+   margin-bottom: 15px;
+   padding: 12px 16px;
+   border-radius: 4px 0 0 4px;
+   border: none;
+   font-size: 15px;
+   background: none;
+   color: var(--white);
+
+   background-image: linear-gradient(to right, var(--blue-dark), #4953b833);
+}
+
+.rightContainer form input::placeholder {
+   color: var(--text-highlight);
+}
+
+.rightContainer form button {
+   width: 80px;
+   background: var(--blue-dark);
+   border: none;
+   border-radius: 0px 4px 4px 0px;
+   line-height: none;
+   cursor: not-allowed;
+}
+
+.rightContainer form .buttonActive {
+   background: var(--green);
+   cursor: pointer;
+}

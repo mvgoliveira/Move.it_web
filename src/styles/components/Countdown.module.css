@@ -47,7 +47,7 @@
    justify-content: center;
    
    border: none;
-   border-radius: 5px;
+   border-radius: 5px 5px 0 0;
 
    background: var(--blue);
    color: var(--white);
@@ -73,11 +73,26 @@
 }
 
 .countdownButton:disabled {
+   display: flex;
    background: var(--white);
    color: var(--text);
    cursor: not-allowed;
-   animation: expand cubic-bezier(1, 0, 0, 1) 1s;
-   border-bottom: 3px solid var(--green);
+   /* animation: expand cubic-bezier(1, 0, 0, 1) 1s;
+   border-bottom: 3px solid var(--green); */
+}
+
+.progressLine {
+   height: 4px;
+   width: 100%;
+
+   background: var(--gray-line);
+   border-radius: 0px 0px 4px 4px;
+}
+
+.progressLine > div {
+   height: 4px;
+   background: var(--green);
+   border-radius: 0px 0px 4px 4px;
 }
 
 .countdownButton:disabled img {
