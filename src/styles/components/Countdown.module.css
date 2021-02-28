@@ -93,6 +93,8 @@
    height: 4px;
    background: var(--green);
    border-radius: 0px 0px 4px 4px;
+
+   transition: width 0.5s;
 }
 
 .countdownButton:disabled img {

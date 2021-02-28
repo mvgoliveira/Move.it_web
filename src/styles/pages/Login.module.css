@@ -71,7 +71,19 @@
    background: none;
    color: var(--white);
 
+   outline: none;
+
    background-image: linear-gradient(to right, var(--blue-dark), #4953b833);
+}
+
+.rightContainer form input:hover {
+   border: 2px solid #414AA3;
+   padding: 10px 14px;
+}
+
+.rightContainer form input:focus {
+   border: 2px solid #414AA3;
+   padding: 10px 14px;
 }
 
 .rightContainer form input::placeholder {
