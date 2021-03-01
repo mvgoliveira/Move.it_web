@@ -11,6 +11,8 @@ export default function getThumbnailTemplate(level: string, challenges: string, 
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap" rel="stylesheet" />
 
       <style>
+
+
          * {
             margin: 0;
             padding: 0;
@@ -45,6 +47,12 @@ export default function getThumbnailTemplate(level: string, challenges: string, 
             color: #5965E0;
             font-size: 19.129rem;
             font-weight: 600;
+            /* background: url('http://localhost:3000/icons/levelup.svg') no-repeat center;
+            background-size: contain; */
+
+            background-image: url('http://localhost:3000/icons/levelup-left.svg'), url('http://localhost:3000/icons/levelup-right.svg');
+            background-position: left, right;
+            background-repeat: no-repeat, no-repeat;
          }
 
          #leftContainer p {
@@ -124,7 +132,7 @@ export default function getThumbnailTemplate(level: string, challenges: string, 
                   <p><strong>${exp}</strong> xp</p>
                </div>
    
-               <div id="logo">Logo</div>
+               <img src="http://localhost:3000/logo-blue.svg" id="logo" width="250" alt="Move.it logo">
             </div>
          </div>
       </body>
