@@ -47,6 +47,7 @@ export default function getThumbnailTemplate(level: string, challenges: string, 
             color: #5965E0;
             font-size: 19.129rem;
             font-weight: 600;
+            padding: 0 86px;
             /* background: url('http://localhost:3000/icons/levelup.svg') no-repeat center;
             background-size: contain; */
 
