@@ -6,6 +6,12 @@ const isDev = !process.env.AWS_REGION;
 
 export default async function (req : NextApiRequest, res: NextApiResponse) {
    try {
+
+      const baseUrl = process.env.NODE_ENV === 'development'
+      ? 'http://localhost:3000'
+      : `https://${process.env.VERCEL_URL}`;
+
+
       const level = String(req.query.level)
       const challenges = String(req.query.challenges)
       const exp = String(req.query.exp)
@@ -14,7 +20,7 @@ export default async function (req : NextApiRequest, res: NextApiResponse) {
          throw new Error("Title is require");
       }
 
-      const html = getThumbnailTemplate(level, challenges, exp);
+      const html = getThumbnailTemplate(level, challenges, exp, baseUrl);
 
       const file = await getScreenshot(html, isDev);
 

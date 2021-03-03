@@ -1,4 +1,6 @@
-export default function getThumbnailTemplate(level: string, challenges: string, exp: string) {
+export default function getThumbnailTemplate(level: string, challenges: string, exp: string, baseUrl:string) {
+   const levelLength = level.length;
+   
    return `
       <!DOCTYPE html>
       <html lang="en">
@@ -45,19 +47,22 @@ export default function getThumbnailTemplate(level: string, challenges: string, 
 
          #leftContainer header{
             color: #5965E0;
-            font-size: 19.129rem;
+            /* font-size: 19.129rem; */
+            
+            font-size: calc(19.129rem/(${levelLength}*${levelLength === 1 ? 1 : 0.5}));
             font-weight: 600;
             padding: 0 86px;
-            /* background: url('http://localhost:3000/icons/levelup.svg') no-repeat center;
+            /* background: url('${baseUrl}/icons/levelup.svg') no-repeat center;
             background-size: contain; */
 
-            background-image: url('http://localhost:3000/icons/levelup-left.svg'), url('http://localhost:3000/icons/levelup-right.svg');
+            background-image: url('${baseUrl}/icons/levelup-left.svg'), url('${baseUrl}/icons/levelup-right.svg');
             background-position: left, right;
             background-repeat: no-repeat, no-repeat;
+            background-size: contain;
          }
 
          #leftContainer p {
-            max-width: 408px;
+            width: 408px;
             font-size: 3.5rem;
             font-weight: bold;
          }
@@ -133,7 +138,7 @@ export default function getThumbnailTemplate(level: string, challenges: string, 
                   <p><strong>${exp}</strong> xp</p>
                </div>
    
-               <img src="http://localhost:3000/logo-blue.svg" id="logo" width="250" alt="Move.it logo">
+               <img src="${baseUrl}/logo-blue.svg" id="logo" width="250" alt="Move.it logo">
             </div>
          </div>
       </body>
