@@ -2,19 +2,11 @@ import Head from 'next/head';
 import {GetServerSideProps} from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 
-import { CompletedChallenges } from "../components/CompletedChallenges";
-import { Countdown } from "../components/Countdown";
-import ExperienceBar from "../components/ExperienceBar";
-import { Profile } from "../components/Profile";
-import { ChallengeBox } from "../components/ChallengeBox";
+import styles from '../styles/pages/Index.module.css';
 
-import { CountdownProvider } from '../contexts/CountdownContext';
-import { ChallengesProvider } from '../contexts/ChallengesContext';
-
-import { LoginProvider } from '../contexts/LoginContext';
-
-import styles from '../styles/pages/Home.module.css';
+import IndexBox from '../components/IndexBox';
 
 interface HomeProps {
   level: number ;
@@ -27,49 +19,25 @@ function Redirect({ to }) {
   const router = useRouter();
 
   useEffect(() => {
-    router.push(to);  
+    router.replace(to);  
   }, [to]);
 
   return null;
 }
 
-export default function Home(props : HomeProps) {
+export default function Index(props : HomeProps) {
 
-  if (props.githubUsername === "undefined") {
-    return <Redirect to="/login" />
+  if (props.githubUsername !== "undefined") {
+    return <Redirect to="/home" />
   }
 
   return (
-    <ChallengesProvider 
-      level={props.level} 
-      currentExperience={props.currentExperience}
-      challengesCompleted={props.challengesCompleted}
-    >
-      <div className={styles.container}>
-        <Head>
-          <title>Inicio | Move.it</title>
-        </Head>
-
-        <ExperienceBar />
-
-        <CountdownProvider>
-          <section>
-            <div>
-              <LoginProvider githubUsername={props.githubUsername}>
-                <Profile />
-              </LoginProvider>
-
-              <CompletedChallenges />
-              <Countdown />
-            </div>
-            
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
-      </div>
-    </ChallengesProvider>
+    <div className={styles.container}>
+      <Head>
+        <title>Move.it</title>
+      </Head>
+      <IndexBox />
+    </div>
   )
 }
 

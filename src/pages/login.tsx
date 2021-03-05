@@ -15,7 +15,7 @@ interface LoginProps {
    const router = useRouter();
  
    useEffect(() => {
-     router.push(to);  
+     router.replace(to);  
    }, [to]);
  
    return null;
@@ -48,7 +48,7 @@ export default function Login(props: LoginProps) {
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content="{props.title}" />
             <meta name="twitter:description" content="{props.description}" />
-            {/* <meta name="twitter:image" content={props.thumbnailUrl} /> */}
+            <meta name="twitter:image" content="https://moveit-teal-omega.vercel.app/api/thumbnail.png?level=20&challenges=10&exp=155500" />
          </Head>
 
          <LoginBox />

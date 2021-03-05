@@ -26,7 +26,7 @@ export function LoginBox() {
       setIsFilled(false);
       reset();
 
-      router.replace('/');
+      router.replace('/home');
    }
 
    return (
