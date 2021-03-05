@@ -2,7 +2,6 @@ import Head from 'next/head';
 import {GetServerSideProps} from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import PerfectScrollbar from 'react-perfect-scrollbar';
 
 import styles from '../styles/pages/Index.module.css';
 
@@ -55,7 +54,7 @@ export default function Index(props : HomeProps) {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Avancei para o próximo nível" />
         <meta name="twitter:description" content="Junte-se a mim no move.it, um site com o objetivo de ajudar pessoas que precisam usar computadores por tempos prolongados." />
-        
+
         <meta name="twitter:image" content={`${baseUrl}/api/thumbnail.png?level=${props.level}&challenges=${props.challengesCompleted}&exp=${props.currentExperience}`} />
       </Head>
       <IndexBox />
