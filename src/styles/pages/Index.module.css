@@ -151,6 +151,11 @@
 .rightFooterContainer p {
    margin-right: 67px;
    color: var(--text-highlight);
+   cursor: pointer;
+}
+
+.rightFooterContainer p:hover {
+   color: var(--white);
 }
 
 .rightFooterContainer button {
