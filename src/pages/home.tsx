@@ -45,11 +45,10 @@ export default function Home(props : HomeProps) {
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
     >
-
       <Head>
         <title>Inicio | Move.it</title>
       </Head>
-         
+               
       <div className={styles.container}>
         <ExperienceBar />
 
@@ -70,7 +69,6 @@ export default function Home(props : HomeProps) {
           </section>
         </CountdownProvider>
       </div>
-
     </ChallengesProvider>
   )
 }

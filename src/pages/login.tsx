@@ -11,15 +11,15 @@ interface LoginProps {
    githubUsername: string
 }
 
- function Redirect({ to }) {
+function Redirect({ to }) {
    const router = useRouter();
- 
+
    useEffect(() => {
-     router.replace(to);  
+      router.replace(to);  
    }, [to]);
- 
+
    return null;
- }
+}
 
 export default function Login(props: LoginProps) {
 
