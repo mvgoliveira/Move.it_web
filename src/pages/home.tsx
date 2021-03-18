@@ -2,6 +2,7 @@ import Head from 'next/head';
 import {GetServerSideProps} from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { getSession } from 'next-auth/client';
 
 import { CompletedChallenges } from "../components/CompletedChallenges";
 import { Countdown } from "../components/Countdown";
@@ -12,15 +13,13 @@ import { ChallengeBox } from "../components/ChallengeBox";
 import { CountdownProvider } from '../contexts/CountdownContext';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
 
-import { LoginProvider } from '../contexts/LoginContext';
-
 import styles from '../styles/pages/Home.module.css';
 
 interface HomeProps {
   level: number ;
   currentExperience: number ;
   challengesCompleted: number ;
-  githubUsername: string ;
+  session: object;
 }
 
 function Redirect({ to }) {
@@ -35,7 +34,7 @@ function Redirect({ to }) {
 
 export default function Home(props : HomeProps) {
 
-  if (props.githubUsername === "undefined") {
+  if (!props.session) {
     return <Redirect to="/login" />
   }
 
@@ -55,9 +54,7 @@ export default function Home(props : HomeProps) {
         <CountdownProvider>
           <section>
             <div>
-              <LoginProvider githubUsername={props.githubUsername}>
-                <Profile />
-              </LoginProvider>
+              <Profile />
 
               <CompletedChallenges />
               <Countdown />
@@ -75,14 +72,15 @@ export default function Home(props : HomeProps) {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
-  const {level, currentExperience, challengesCompleted, githubUsername} = ctx.req.cookies;
+  const {level, currentExperience, challengesCompleted} = ctx.req.cookies;
+  const session = await getSession(ctx);
 
   return {
     props: {
       level: Number(level),
       currentExperience: Number(currentExperience),
       challengesCompleted: Number(challengesCompleted),
-      githubUsername: String(githubUsername)
+      session
     }
   }
 }

@@ -26,7 +26,7 @@
 }
 
 .rightContainer > img {
-   max-width: 22.5rem;
+   max-width: 22rem;
    padding-bottom: 96px;
 }
 
@@ -42,31 +42,24 @@
    padding-bottom: 40px;
 }
 
-.rightContainer > div img {
-   padding-right: 24px;
-   max-height: 2.396rem;
-}
-
 .rightContainer > div p {
-   padding-left: 24px;
-   max-width: 254px;
+   max-width: 230px;
    color: var(--text-highlight);
    font-size: 1rem;
 }
 
-.rightContainer form {
+.rightContainer button {
    display: flex;
-   background: none;
-}
+   align-items: center;
 
-.rightContainer form input {
-   width: 340px;
-   height: 100%;
+   width: 420px;
 
    margin-bottom: 15px;
-   padding: 12px 16px;
-   border-radius: 4px 0 0 4px;
-   border: none;
+   border-radius: 5px;
+
+   border: 2px solid #4852ad;
+   padding: 15px 18px;
+
    font-size: 15px;
    background: none;
    color: var(--white);
@@ -74,32 +67,15 @@
    outline: none;
 
    background-image: linear-gradient(to right, var(--blue-dark), #4953b833);
+
+   transition: border 0.1s linear;
 }
 
-.rightContainer form input:hover {
-   border: 2px solid #414AA3;
-   padding: 10px 14px;
+.rightContainer button:hover {
+   border: 2px solid var(--green);
 }
 
-.rightContainer form input:focus {
-   border: 2px solid #414AA3;
-   padding: 10px 14px;
-}
-
-.rightContainer form input::placeholder {
+.rightContainer button p {
    color: var(--text-highlight);
-}
-
-.rightContainer form button {
-   width: 80px;
-   background: var(--blue-dark);
-   border: none;
-   border-radius: 0px 4px 4px 0px;
-   line-height: none;
-   cursor: not-allowed;
-}
-
-.rightContainer form .buttonActive {
-   background: var(--green);
-   cursor: pointer;
+   padding-left: 30px;
 }

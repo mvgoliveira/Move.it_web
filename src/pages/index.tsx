@@ -2,16 +2,17 @@ import Head from 'next/head';
 import {GetServerSideProps} from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { getSession } from 'next-auth/client';
 
 import styles from '../styles/pages/Index.module.css';
 
 import IndexBox from '../components/IndexBox';
 
 interface HomeProps {
-  githubUsername: string ;
   level: string;
   challenges: string;
   exp: string;
+  session: object;
 }
 
 function Redirect({ to }) {
@@ -26,7 +27,7 @@ function Redirect({ to }) {
 
 export default function Index(props : HomeProps) { 
 
-  if (props.githubUsername !== "undefined") {
+  if (props.session) {
     return <Redirect to="/home" />
   }
 
@@ -66,19 +67,18 @@ export default function Index(props : HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-
-  const {githubUsername} = ctx.req.cookies;
-
+  
   const level = String(ctx.query.level);
   const challenges = String(ctx.query.challenges);
   const exp = String(ctx.query.exp);
+  const session = await getSession(ctx);
 
   return {
     props: {
-      githubUsername: String(githubUsername),
       level: String(level),
       challenges: String(challenges),
-      exp: String(exp)
+      exp: String(exp),
+      session
     }
   }
 }
