@@ -2,6 +2,9 @@ import styles from '../styles/pages/Login.module.css';
 import { signIn } from 'next-auth/client';
 
 export function LoginBox() {
+   const baseUrl = process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : `https://${process.env.VERCEL_URL}`;
 
    return (
       <div className={styles.container}>
@@ -19,7 +22,7 @@ export function LoginBox() {
                   className={styles.buttonActive} 
                   onClick={(): Promise<void> => signIn(
                      'github', 
-                     { callbackUrl: 'http://localhost:3000/home'}
+                     { callbackUrl: `${baseUrl}/home`}
                   )}>
 
                   <img width={30} src="/icons/github-logo.svg" alt="github Logo"/>
