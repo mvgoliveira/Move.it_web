@@ -4,8 +4,7 @@ import { useEffect } from 'react';
 
 export function LoginBox() {
    useEffect(() => {
-      console.log(process.env.GITHUB_ID);
-      
+      console.log(process.env.NEXT_PUBLIC_GITHUB_ID);
    }, [])
 
    return (
