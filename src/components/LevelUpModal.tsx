@@ -8,7 +8,7 @@ export function LevelUpModal() {
 
    const baseUrl = process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000'
-    : `https://moveit-teal-omega.vercel.app`;
+    : process.env.NEXT_PUBLIC_BASE_URL;
 
    return (
       <div className={styles.overlay}>

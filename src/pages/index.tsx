@@ -31,7 +31,9 @@ export default function Index(props : HomeProps) {
     return <Redirect to="/home" />
   }
 
-  const baseUrl = `https://moveitapp.netlify.app`;
+  const baseUrl = process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : process.env.NEXT_PUBLIC_BASE_URL;
 
   return (
     <div className={styles.container}>
