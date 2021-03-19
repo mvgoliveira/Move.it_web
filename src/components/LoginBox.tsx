@@ -22,8 +22,7 @@ export function LoginBox() {
                <button 
                   className={styles.buttonActive} 
                   onClick={(): Promise<void> => signIn(
-                     'github', 
-                     { callbackUrl: 'https://moveitapp.netlify.app/'}
+                     'github'
                   )}>
 
                   <img width={30} src="/icons/github-logo.svg" alt="github Logo"/>
