@@ -6,7 +6,7 @@ export default function MyApp({ Component, pageProps }) {
   const { session } = pageProps;
   
   return (
-    <Provider session={session}>
+    <Provider options={{ site: "https://moveitapp.netlify.app" }} session={session}>
       <Component {...pageProps} />
     </Provider>
   )
