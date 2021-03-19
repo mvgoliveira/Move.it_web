@@ -3,9 +3,6 @@ import { signIn } from 'next-auth/client';
 import { useEffect } from 'react';
 
 export function LoginBox() {
-   useEffect(() => {
-      console.log(process.env.NEXTAUTH_URL);
-   }, [])
 
    return (
       <div className={styles.container}>
