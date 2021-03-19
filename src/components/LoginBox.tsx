@@ -1,7 +1,12 @@
 import styles from '../styles/pages/Login.module.css';
 import { signIn } from 'next-auth/client';
+import { useEffect } from 'react';
 
 export function LoginBox() {
+   useEffect(() => {
+      console.log(process.env.URL);
+      
+   }, [])
 
    return (
       <div className={styles.container}>
