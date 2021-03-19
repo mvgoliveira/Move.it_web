@@ -20,7 +20,7 @@ export function LoginBox() {
                   <button 
                      className={styles.buttonActive} 
                      onClick={(): Promise<void> => signIn(
-                        'google'
+                        'github'
                         )}>
 
                      <img width={30} src="/icons/github-logo.svg" alt="github Logo"/>
