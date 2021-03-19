@@ -7,7 +7,7 @@ O NLW é um evento online organizado pela @rocketseat, com muito código, desafi
 A trilha react da quarta edição do nlw tem o objetivo de criar um site chamado moveit. O site usa os fundamentos da técnica pomodoro 
 para promover séries de alongamentos e exercícios para evitar problemas futuros de saúde, devido ao uso excessivo dos computadores.
 
-[Clique aqui](https://moveit-teal-omega.vercel.app) para abrir o site hospedado na Vercel.
+[Clique aqui](https://moveitapp.netlify.app) para abrir o site hospedado no NetliFly.
 
 ### 📁 Instalação
 
