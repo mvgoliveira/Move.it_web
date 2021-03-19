@@ -48,11 +48,17 @@
    font-size: 1rem;
 }
 
+.rightContainer .buttonContainer {
+   display: grid;
+   grid-template-rows: 1fr;
+   grid-template-columns: 1fr 1fr;
+   grid-gap: 15px;
+   width: 450px;
+}
+
 .rightContainer button {
    display: flex;
    align-items: center;
-
-   width: 420px;
 
    margin-bottom: 15px;
    border-radius: 5px;
@@ -77,5 +83,9 @@
 
 .rightContainer button p {
    color: var(--text-highlight);
-   padding-left: 30px;
+   padding-left: 10px;
+}
+
+.rightContainer button svg {
+   color: var(--text-highlight);
 }
