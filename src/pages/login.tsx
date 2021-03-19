@@ -23,10 +23,6 @@ function Redirect({ to }) {
 
 export default function Login(props: LoginProps) {
 
-   useEffect(() => {
-      console.log(props.session);
-   }, [])
-
    if (props.session) {
       return <Redirect to="/home" />
    }
