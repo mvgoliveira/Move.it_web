@@ -33,7 +33,7 @@ export default function Index(props : HomeProps) {
 
   const baseUrl = process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000'
-    : `https://${process.env.SITE_URL}`;
+    : `https://moveitapp.netlify.app`;
 
   return (
     <div className={styles.container}>
