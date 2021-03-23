@@ -35,6 +35,11 @@ export default function Index(props : HomeProps) {
     ? 'http://localhost:3000'
     : process.env.NEXT_PUBLIC_BASE_URL;
 
+  useEffect(() => {
+    history.pushState(null, "", location.href.split("?")[0]);
+    console.log(props.level);
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -71,6 +76,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const level = String(ctx.query.level);
   const challenges = String(ctx.query.challenges);
   const exp = String(ctx.query.exp);
+
   const session = await getSession(ctx);
 
   return {

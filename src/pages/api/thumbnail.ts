@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { Router, useRouter } from 'next/router'
 import { getScreenshot } from "./_lib/chromiun";
 import getThumbnailTemplate from "./_lib/thumbTemplate";
 
@@ -12,9 +13,9 @@ export default async function (req : NextApiRequest, res: NextApiResponse) {
       : `https://${process.env.VERCEL_URL}`;
 
 
-      const level = String(req.query.level)
-      const challenges = String(req.query.challenges)
-      const exp = String(req.query.exp)
+      const level = String(req.query.level);
+      const challenges = String(req.query.challenges);
+      const exp = String(req.query.exp);
 
       if (!level) {
          throw new Error("Title is require");
@@ -26,7 +27,7 @@ export default async function (req : NextApiRequest, res: NextApiResponse) {
 
       res.setHeader('Content-Type', 'image/png');
       res.setHeader('Cache-Control', 'public, immutable, no-transform, s-maxage=31536000, max-age=31536000');
-      
+
       return res.end(file);
 
    } catch (error) {
