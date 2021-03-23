@@ -37,7 +37,6 @@ export default function Index(props : HomeProps) {
 
   useEffect(() => {
     history.pushState(null, "", location.href.split("?")[0]);
-    console.log(props.level);
   }, []);
 
   return (
