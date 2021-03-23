@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { Router, useRouter } from 'next/router'
 import { getScreenshot } from "./_lib/chromiun";
 import getThumbnailTemplate from "./_lib/thumbTemplate";
 
