@@ -21,15 +21,12 @@ export default async function (req : NextApiRequest, res: NextApiResponse) {
 
       const html = getThumbnailTemplate(level, challenges, exp, baseUrl);
 
-      console.log(html);
-      
+      const file = await getScreenshot(html, false);
 
-      // const file = await getScreenshot(html, isDev);
+      res.setHeader('Content-Type', 'image/png');
+      res.setHeader('Cache-Control', 'public, immutable, no-transform, s-maxage=31536000, max-age=31536000');
 
-      // res.setHeader('Content-Type', 'image/png');
-      // res.setHeader('Cache-Control', 'public, immutable, no-transform, s-maxage=31536000, max-age=31536000');
-
-      // return res.end(file);
+      return res.end(file);
 
    } catch (error) {
       console.error(error);

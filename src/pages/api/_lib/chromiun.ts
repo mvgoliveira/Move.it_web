@@ -8,7 +8,7 @@ async function getPage(isDev: boolean) {
       return _page;
    }
 
-   const options = await getOptions(true);
+   const options = await getOptions(isDev);
    const browser = await puppeteer.launch(options);
 
    _page = await browser.newPage();
@@ -17,7 +17,7 @@ async function getPage(isDev: boolean) {
 }
 
 export async function getScreenshot(html: string, isDev: boolean) {
-   const page = await getPage(true);
+   const page = await getPage(isDev);
 
    await page.setViewport({ width: 1200, height: 630 });
    await page.setContent(html);
