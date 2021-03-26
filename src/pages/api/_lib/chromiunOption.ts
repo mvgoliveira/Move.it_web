@@ -1,4 +1,4 @@
-import chrome from 'chrome-aws-lambda';
+const chromium =  require('chrome-aws-lambda');
 
 const chromeExecPaths = {
    win32: 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
@@ -25,9 +25,9 @@ export async function getOptions(isDev: boolean): Promise<Options> {
       }
    } else {
       options = {
-         args: chrome.args,
-         executablePath: await chrome.executablePath,
-         headless: chrome.headless
+         args: chromium.args,
+         executablePath: await chromium.executablePath,
+         headless: chromium.headless
       }
    }
 

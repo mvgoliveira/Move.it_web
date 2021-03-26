@@ -4,16 +4,14 @@ import getThumbnailTemplate from "./_lib/thumbTemplate";
 
 const isDev = !process.env.AWS_REGION;
 
+console.log(process.env.AWS_REGION);
+
 export default async function (req : NextApiRequest, res: NextApiResponse) {
    try {
 
       const baseUrl = process.env.NODE_ENV === 'development'
-         ? 'http://localhost:3005'
+         ? 'http://localhost:3000'
          : process.env.NEXT_PUBLIC_BASE_URL;
-
-      console.log(process.env.NEXT_PUBLIC_BASE_URL);
-      
-
 
       const level = String(req.query.level);
       const challenges = String(req.query.challenges);
@@ -25,7 +23,7 @@ export default async function (req : NextApiRequest, res: NextApiResponse) {
 
       const html = getThumbnailTemplate(level, challenges, exp, baseUrl);
 
-      const file = await getScreenshot(html, isDev);
+      const file = await getScreenshot(html, false);
 
       res.setHeader('Content-Type', 'image/png');
       res.setHeader('Cache-Control', 'public, immutable, no-transform, s-maxage=31536000, max-age=31536000');
