@@ -1,5 +1,0 @@
-[[redirects]]
-   from = "/api/thumbnail.png"
-   to = "/api/thumbnail"
-   status = 301
-   force = false
