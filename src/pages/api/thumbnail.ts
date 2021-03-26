@@ -22,7 +22,7 @@ export default async function (req : NextApiRequest, res: NextApiResponse) {
 
       const html = getThumbnailTemplate(level, challenges, exp, baseUrl);
 
-      const file = await getScreenshot(html, isDev);
+      const file = await getScreenshot(html, true);
 
       res.setHeader('Content-Type', 'image/png');
       res.setHeader('Cache-Control', 'public, immutable, no-transform, s-maxage=31536000, max-age=31536000');
