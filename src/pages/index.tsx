@@ -34,9 +34,6 @@ export default function Index(props : HomeProps) {
   const baseUrl = process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000'
     : process.env.NEXT_PUBLIC_BASE_URL;
-  
-  console.log(baseUrl);
-  
 
   useEffect(() => {
     history.pushState(null, "", location.href.split("?")[0]);
