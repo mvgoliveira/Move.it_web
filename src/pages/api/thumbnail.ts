@@ -16,9 +16,6 @@ export default async function (req : NextApiRequest, res: NextApiResponse) {
       const challenges = String(req.query.challenges);
       const exp = String(req.query.exp);
 
-      console.log(level);
-      
-
       if (level === "undefined") {
          throw new Error("Title is require");
       }
