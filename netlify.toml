@@ -1,5 +1,5 @@
 [[redirects]]
    from = "/api/thumbnail.png"
    to = "/api/thumbnail"
-   status = 302
+   status = 301
    force = false
