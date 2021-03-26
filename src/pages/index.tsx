@@ -39,9 +39,6 @@ export default function Index(props : HomeProps) {
     history.pushState(null, "", location.href.split("?")[0]);
   }, []);
 
-  console.log(process.env.AWS_REGION);
-  
-
   return (
     <div className={styles.container}>
       <Head>
