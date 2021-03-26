@@ -4,8 +4,6 @@ import getThumbnailTemplate from "./_lib/thumbTemplate";
 
 const isDev = !process.env.AWS_REGION;
 
-console.log(process.env.AWS_REGION);
-
 export default async function (req : NextApiRequest, res: NextApiResponse) {
    try {
 
@@ -23,12 +21,15 @@ export default async function (req : NextApiRequest, res: NextApiResponse) {
 
       const html = getThumbnailTemplate(level, challenges, exp, baseUrl);
 
-      const file = await getScreenshot(html, isDev);
+      console.log(html);
+      
 
-      res.setHeader('Content-Type', 'image/png');
-      res.setHeader('Cache-Control', 'public, immutable, no-transform, s-maxage=31536000, max-age=31536000');
+      // const file = await getScreenshot(html, isDev);
 
-      return res.end(file);
+      // res.setHeader('Content-Type', 'image/png');
+      // res.setHeader('Cache-Control', 'public, immutable, no-transform, s-maxage=31536000, max-age=31536000');
+
+      // return res.end(file);
 
    } catch (error) {
       console.error(error);
