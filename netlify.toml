@@ -1,0 +1,5 @@
+[[redirects]]
+   from = "/api/thumbnail.png"
+   to = "/api/thumbnail"
+   status = 302
+   force = false
