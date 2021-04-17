@@ -3,6 +3,7 @@ import {GetServerSideProps} from 'next';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { getSession } from 'next-auth/client';
+import router from 'next/router';
 
 import styles from '../styles/pages/Index.module.css';
 
@@ -36,7 +37,7 @@ export default function Index(props : HomeProps) {
     : process.env.NEXT_PUBLIC_BASE_URL;
 
   useEffect(() => {
-    history.pushState(null, "", location.href.split("?")[0]);
+    router.push(location.href.split("?")[0]);
   }, []);
 
   return (
