@@ -1,13 +1,16 @@
 # :rocket: Next Level Week 04 - Trilha reactJs
 O NLW é um evento online organizado pela @rocketseat, com muito código, desafios, networking e um único objetivo: levar programadores para o próximo nível.
  
+ ---
 
 ### 	:man_technologist: Sobre a aplicação
 
 A trilha react da quarta edição do nlw tem o objetivo de criar um site chamado moveit. O site usa os fundamentos da técnica pomodoro 
 para promover séries de alongamentos e exercícios para evitar problemas futuros de saúde, devido ao uso excessivo dos computadores.
 
-[Clique aqui](https://moveitapp.netlify.app) para abrir o site hospedado no NetliFly.
+[Clique aqui](https://moveit-mvgoliveira.vercel.app) para abrir o site hospedado na Vercel.
+
+---
 
 ### 📁 Instalação
 
